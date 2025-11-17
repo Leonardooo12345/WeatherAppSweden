@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "WeatherAppSweden";
+}
+
+<div class="text-center p-5">
+    <h1 class="display-4 mb-3">WeatherAppSweden</h1>
+    <p class="lead">Vädret just nu i Sveriges 10 största städer</p>
+    <p>Uppdaterad: @DateTime.Now:yyyy-MM-dd HH:mm</p>
+
+    @if (Model.WeatherList.Any())
+    {
+        <table class="table table-striped table-hover w-75 mx-auto">
+            <thead class="table-dark">
+                <tr>
+                    <th>Stad</th>
+                    <th>Temperatur</th>
+                    <th>Nederbörd</th>
+                    <th>Vind</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var w in Model.WeatherList)
+                {
+                    <tr>
+                        <td><strong>@w.City</strong></td>
+                        <td>@w.Temperature °C</td>
+                        <td>@w.Precipitation mm</td>
+                        <td>@w.WindSpeed m/s</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Laddar väderdata...</p>
+    }
+</div>
