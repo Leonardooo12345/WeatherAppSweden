@@ -8,3 +8,5 @@ public class WeatherData
     public double WindSpeed { get; set; }
     public DateTime Time { get; set; }
 }
+ 
+ 

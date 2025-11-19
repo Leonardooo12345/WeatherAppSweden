@@ -24,4 +24,5 @@ public class IndexModel : PageModel
             .OrderByDescending(w => w.Temperature)
             .ToList();
     }
-}
+} 
+ 
