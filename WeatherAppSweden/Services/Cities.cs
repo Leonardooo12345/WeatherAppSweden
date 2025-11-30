@@ -18,3 +18,4 @@ public static class Cities
         new("Norrköping", 58.5877, 16.1924)
     };
 }
+ 
