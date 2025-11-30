@@ -6,29 +6,29 @@
 
 <div class="text-center p-5">
     <h1 class="display-4 mb-4">WeatherAppSweden</h1>
-    <p class="lead">Uppdaterad: @DateTime.Now:yyyy-MM-dd HH:mm</p>
+    <p class="lead mb-5">Uppdaterad: @DateTime.Now:yyyy-MM-dd HH:mm</p>
 
-    <table class="table table-striped table-hover w-75 mx-auto">
+    <table class="table table-striped table-hover w-80 mx-auto">
         <thead class="table-dark">
             <tr>
                 <th>Stad</th>
                 <th>Temp</th>
-                <th>Regn</th>
-                <th>Vind</th>
-                <th>Ute-index</th>
+                <th>Regn (mm)</th>
+                <th>Vind (m/s)</th>
+                <th>Känns som</th>
                 <th>Kommentar</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var c in Model.WeatherList)
+            @foreach (var w in Model.WeatherList)
             {
                 <tr>
-                    <td><strong>@c.City</strong></td>
-                    <td>@c.Temperature °C</td>
-                    <td>@c.Rain mm</td>
-                    <td>@c.Wind m/s</td>
-                    <td><strong>@c.OutdoorScore</strong></td>
-                    <td>@c.Comment</td>
+                    <td><strong>@w.City</strong></td>
+                    <td>@w.Temperature °C</td>
+                    <td>@w.Precipitation</td>
+                    <td>@w.WindSpeed</td>
+                    <td><strong>@w.FeelsLike °C</strong></td>
+                    <td>@w.Comment</td>
                 </tr>
             }
         </tbody>
